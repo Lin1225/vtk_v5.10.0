@@ -941,7 +941,7 @@ static int vtkTkRenderWidget_MakeRenderWindow(struct vtkTkRenderWidget *self)
     vtkTclGetObjectFromPointer(self->Interp, self->RenderWindow,
                                "vtkRenderWindow");
 #endif
-    self->RW = ckalloc(
+    self->RW = (char*)ckalloc(
       static_cast<unsigned int>(strlen(Tcl_GetStringResult(self->Interp)) + 1));
     strcpy(self->RW, Tcl_GetStringResult(self->Interp));
     Tcl_ResetResult(self->Interp);
@@ -1113,7 +1113,7 @@ vtkTkRenderWidget_MakeRenderWindow(struct vtkTkRenderWidget *self)
     vtkTclGetObjectFromPointer(self->Interp, self->RenderWindow,
           "vtkRenderWindow");
 #endif
-    self->RW = ckalloc(
+    self->RW = (char*)ckalloc(
       static_cast<unsigned int>(strlen(Tcl_GetStringResult(self->Interp)) + 1));
     strcpy(self->RW, Tcl_GetStringResult(self->Interp));
     Tcl_ResetResult(self->Interp);
@@ -1306,7 +1306,7 @@ vtkTkRenderWidget_MakeRenderWindow(struct vtkTkRenderWidget *self)
     vtkTclGetObjectFromPointer(self->Interp, self->RenderWindow,
           "vtkRenderWindow");
 #endif
-    self->RW = ckalloc(
+    self->RW =(char*) ckalloc(
       static_cast<unsigned int>(strlen(Tcl_GetStringResult(self->Interp)) + 1));
     strcpy(self->RW, Tcl_GetStringResult(self->Interp));
     Tcl_ResetResult(self->Interp);
